@@ -1,8 +1,41 @@
 import { useState } from "react"
 
-const Carrinho = ({carrinho, setCarrinho}) => {
+const Carrinho = ({carrinho, setCarrinho, data}) => {
+
+    const [visualizarCarrinho, setVisualizarCarrinho] = useState(true)
     
-    
+    const CarrinhoVazio = () =>{ return ( <>
+                            <div className="carrinho_cesta_vazia">
+                            <h3>Carrinho Vazio</h3>
+                            <p>Adicione Itens.</p>
+                            </div>
+                        </>)}
+
+
+    const CarrinhoCheio = () => { 
+        
+        let newCarr = [...carrinho]
+        return ( <>
+                            {carrinho.map((objarr) => {
+                                let newData = data.filter(obj => obj.titulo === objarr.titulo)
+                                return(
+                                        <div key={`carrinho ${objarr.id}`} className="carrinho_cesta_cheia">
+                                            <div className="carrinho_cesta_cheia_divImg">
+                                                <img src={newData[0].img} alt="img carrinho" className="carrinho_cesta_cheia_img"/>
+                                            </div>
+
+                                            <div className="carrinho_cesta_cheia_conteudo">
+                                                <h4 className="carrinho_cesta_cheia_conteudo_titulo">{newData[0].titulo}</h4>
+                                                <p className="carrinho_cesta_cheia_conteudo_valor">R$ {newData[0].valor}.00</p>
+                                                <p onClick={() =>{ newCarr.splice(newCarr.indexOf(objarr), 1); setCarrinho(newCarr)}} className="carrinho_cesta_cheia_conteudo_link">Remover produto</p>
+                                            </div> 
+                                        </div>
+                                    
+                                )})}
+                        </>
+                        )}
+
+
     return (
         <>
         <div className="carrinho">
@@ -11,11 +44,17 @@ const Carrinho = ({carrinho, setCarrinho}) => {
                 <button className="carrinho_inpBtn_btn">Pesquisar</button>
             </div>
             <div className="carrinho_cesta">
-                <button className="carrinho_cesta_btn"></button>
-                <div className="carrinho_cesta_div">
-                    {carrinho.length === 0 && <p>ola</p>}  
-                </div>
+                <button className="carrinho_cesta_btn" onClick={() => setVisualizarCarrinho(!visualizarCarrinho)}>Carrinho De Compra</button>
+                {visualizarCarrinho === true &&
+                <>
+                    <div className="carrinho_cesta_div">
+                        {carrinho.length === 0 ? <CarrinhoVazio/> : <CarrinhoCheio/>}  
+                    </div>
+                    <div></div>
+                </>
+                }
             </div>
+            
 
         </div>
         </>

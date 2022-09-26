@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-const Cards = ({filtroData}) => {
+const Cards = ({filtroData, carrinho, setCarrinho}) => {
     return(
         <>
           <ul className="div_card">
@@ -15,7 +15,7 @@ const Cards = ({filtroData}) => {
                 <h3 className="card_nome paddingLeft">{obj.titulo}</h3>
                 <p className="card_descricao paddingLeft">{obj.descricao}</p>
                 <p className="card_valor paddingLeft" >R$ {obj.valor}.00</p>
-                <p className="card_link paddingLeft">adicionar ao carrinho</p>
+                <p onClick={() => setCarrinho([...carrinho,{titulo:obj.titulo, id:carrinho.length + 1}])} className="card_link paddingLeft">adicionar ao carrinho</p>
               </li> 
             )})} 
           </ul>

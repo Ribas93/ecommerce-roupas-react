@@ -6,8 +6,8 @@ const Main = ({setCarrinho, carrinho, data, filtroData}) => {
     return(
     <>
         <div className='cardsCarrinho'>
-            <Cards filtroData={filtroData}/>
-            <Carrinho carrinho={carrinho} setCarrinho={setCarrinho}/>
+            <Cards filtroData={filtroData}  carrinho={carrinho} setCarrinho={setCarrinho}/>
+            <Carrinho data={data} carrinho={carrinho} setCarrinho={setCarrinho}/>
         </div>
      </>
     )
