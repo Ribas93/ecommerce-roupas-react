@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <Header data={data} setFiltroData={setFiltroData}/>
-    <Main carrinho={carrinho} setCarrinho={setCarrinho} data={data} filtroData={filtroData}/>
+    <Main setFiltroData={setFiltroData} carrinho={carrinho} setCarrinho={setCarrinho} data={data} filtroData={filtroData}/>
     </>
   );
 }
