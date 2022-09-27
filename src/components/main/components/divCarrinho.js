@@ -50,7 +50,18 @@ const Carrinho = ({carrinho, setCarrinho, data}) => {
                     <div className="carrinho_cesta_div">
                         {carrinho.length === 0 ? <CarrinhoVazio/> : <CarrinhoCheio/>}  
                     </div>
-                    <div></div>
+                    {carrinho.length !== 0 &&
+                    <div className="carrinho_cesta_inf">
+                        <div  className="carrinho_cesta_inf_div">
+                            <p className='carrinho_cesta_inf_div_chave'>Quantidade:</p>
+                            <p>{carrinho.length}</p>
+                        </div>
+                        <div className="carrinho_cesta_inf_div">
+                            <p className='carrinho_cesta_inf_div_chave'>Valor:</p>
+                            <p>{carrinho.length === 0 ? `R$ 0.00`: `R$ ${carrinho.map((obj) => obj.valor).reduce((inicio, valor) => inicio + valor)}.00`}</p>
+                        </div>
+                        <button className="carrinho_cesta_inf_limpar" onClick={() => setCarrinho([])}>Limpar Produtos</button>
+                    </div>}
                 </>
                 }
             </div>

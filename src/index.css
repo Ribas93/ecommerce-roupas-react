@@ -230,6 +230,35 @@ font-weight: 500;
 .carrinho_cesta_cheia_conteudo_link:hover{
 cursor: pointer;
 }
+
+.carrinho_cesta_inf{
+  background-color: #292929;
+  color: white;
+  padding: 10px;
+}
+
+.carrinho_cesta_inf_div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.carrinho_cesta_inf_div_chave{
+  font-weight: 500;
+  margin: 5px 0px
+}
+
+.carrinho_cesta_inf_limpar{
+  font-weight: 400;
+  margin: 10px 0px;
+  font-style: italic;
+  color:#292929;
+  background-color: rgba(245, 245, 245, 1);;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+
 /*
 carrinho
 carrinho_inpBut
