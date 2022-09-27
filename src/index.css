@@ -1,3 +1,7 @@
+
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -79,7 +83,7 @@ button:hover{
 .card_img_div{
 height: 154px;
 width: 296px;
-background-color: rgb(237, 232, 232);
+background-color: rgba(245, 245, 245, 1);
 display: flex;
 justify-content: center;
 }
@@ -97,6 +101,10 @@ justify-content: center;
   box-shadow: 0px 0px 10px 1px rgb(237, 232, 232);
 }
 
+.card:hover{
+  border: 0.8px solid #37268c;
+}
+
 .card_img{margin-right: 30px;}
 
 .card_nome{font-size: 18px; font-weight: 700; margin: 10px 0px 10px 15px;}
@@ -107,7 +115,8 @@ justify-content: center;
   height: 72px;
 }
 
-.card_btn{margin-top: 10px; padding: 4px; font-size: 12px; width: 67px; background-color: rgb(85, 47, 200); color: white; border: none; border-radius: 2px;}
+.card_btn{margin-top: 10px; padding: 4px; font-size: 12px; width: 67px; background-color: #2E245E; color: white; border: none; border-radius: 2px;}
+
 
 .card_valor{font-weight: 600; margin: 17px 15px; color:#2E245E}
 
@@ -145,7 +154,7 @@ margin-right: 5px;
   margin-left: 0px;
   height: 49px;
   width: 96px;
-  background-color: rgba(55, 38, 140, 1);
+  background-color: #37268c;
   color:white ;
   border: none;
 }
@@ -161,7 +170,7 @@ margin-right: 5px;
 .carrinho_cesta_btn{
 width: 100%;
 height: 49px;
-background-color:rgba(55, 38, 140, 1); 
+background-color:#37268c; 
 color: white;
 font-weight: 500;
 border: none;
@@ -219,7 +228,7 @@ font-size: 18px;
 
 .carrinho_cesta_cheia_conteudo_valor{
   margin: 10px 0px;
-  color: #2E245E;
+  color: #37268c;
   font-weight: 500;
 }
 

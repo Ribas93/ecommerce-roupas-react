@@ -1,8 +1,8 @@
 const BtnCalc = ({data, setFiltroData} ) => {
-    let filtroData = data.filter((obj) => obj.secao === "Calcados")
+    let filtroData = data.filter((obj) => obj.secao === "Conjuntos")
     return(
         <>
-        <p onClick={() => setFiltroData(filtroData)} className="header_calcados">Calcados</p>
+        <p onClick={() => setFiltroData(filtroData)} className="header_calcados">Conjuntos</p>
         </>
     )
 }
