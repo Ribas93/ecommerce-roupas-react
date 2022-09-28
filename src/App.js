@@ -22,7 +22,7 @@ function App() {
   return (
           <>
             <Header filterProductsList={filterProductsList} data={data} setFiltroData={setFiltroData}/>
-            <div>
+            <div style={{display: 'flex', flexWrap: 'wrap'}}>
               <Cards filtroData={filtroData} carrinho={carrinho} setCarrinho={setCarrinho}/>
               <Carrinho carrinho={carrinho} setCarrinho={setCarrinho} data={data} setFiltroData={setFiltroData}/>
             </div>
