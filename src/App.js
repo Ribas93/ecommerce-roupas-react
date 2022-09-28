@@ -1,15 +1,32 @@
 import data from './data';
-import Header from './components/header';
-import Main from './components/main';
-import { useState } from 'react';
+import { Header } from './components/Header';
+import { Cards } from './components/Cards';
+import { Carrinho } from './components/Carrinho';
+import { useCallback, useState } from 'react';
+
 function App() {
   const [carrinho, setCarrinho] = useState([])
   const [filtroData, setFiltroData] = useState(data)
+
+  const filterProductsList = useCallback((filter) => {
+      if (!filter)
+      {
+        setFiltroData(data)
+        return
+      }
+
+      setFiltroData(data.filter(product => product.secao === filter))
+    
+  },[data])
+
   return (
-    <>
-    <Header data={data} setFiltroData={setFiltroData}/>
-    <Main setFiltroData={setFiltroData} carrinho={carrinho} setCarrinho={setCarrinho} data={data} filtroData={filtroData}/>
-    </>
+          <>
+            <Header filterProductsList={filterProductsList} data={data} setFiltroData={setFiltroData}/>
+            <div>
+              <Cards filtroData={filtroData} carrinho={carrinho} setCarrinho={setCarrinho}/>
+              <Carrinho carrinho={carrinho} setCarrinho={setCarrinho} data={data} setFiltroData={setFiltroData}/>
+            </div>
+          </>
   );
 }
 

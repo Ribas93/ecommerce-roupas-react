@@ -1,6 +1,15 @@
 import { useState } from "react"
+import "./styles.css";
 
-const Carrinho = ({carrinho, setCarrinho, data, setFiltroData}) => {
+
+export const Carrinho = ({carrinho, setCarrinho, data, setFiltroData}) => {
+
+   const removeProduct = (productId) => {
+       
+    setCarrinho(carrinho.filter(product => product.id !== productId))   
+   }
+
+
 
      // ** carrinho [e] um array de obj, com titulo: data.titulo, id: posicao do obj no array e valor: data.valor 
     const [visualizarCarrinho, setVisualizarCarrinho] = useState(true)
@@ -23,16 +32,16 @@ const Carrinho = ({carrinho, setCarrinho, data, setFiltroData}) => {
     const CarrinhoCheio = () => { 
        
         // copia do array que esta no carrinho para ser utilizado quando for retirar algum item do array pelo btn de retirar o produto
-        let newCarr = [...carrinho]
+        
 
         return ( <>
-                            {carrinho.map((objarr) => {
+                            {carrinho.map((product) => {
 
                                 // pegando o objeto correspondente ao titulo que esta no arr do carrinho 
-                                let newData = data.filter(obj => obj.titulo === objarr.titulo)
+                                let newData = data.filter(obj => obj.titulo === product.titulo)
                                 return(
                                     // mini card dentro do carrinho contendo img do prod, titulo, valor e um btn para retirar prod (no btn utilizei splice da copia do carrinho, indentificando a posicao do item pelo indexOf)
-                                        <div key={`carrinho ${objarr.id}`} className="carrinho_cesta_cheia">
+                                        <div key={`carrinho ${product.id}`} className="carrinho_cesta_cheia">
                                             <div className="carrinho_cesta_cheia_divImg">
                                                 <img src={newData[0].img} alt="img carrinho" className="carrinho_cesta_cheia_img"/>
                                             </div>
@@ -41,7 +50,7 @@ const Carrinho = ({carrinho, setCarrinho, data, setFiltroData}) => {
                                                 <h4 className="carrinho_cesta_cheia_conteudo_titulo">{newData[0].titulo}</h4>
                                                 <p className="carrinho_cesta_cheia_conteudo_valor">R$ {newData[0].valor}.00</p>
     
-                                                <p onClick={() =>{ newCarr.splice(newCarr.indexOf(objarr), 1); setCarrinho(newCarr)}} className="carrinho_cesta_cheia_conteudo_link">Remover produto</p>
+                                                <p onClick={() =>{removeProduct(product.id)}} className="carrinho_cesta_cheia_conteudo_link">Remover produto</p>
                                             </div> 
                                         </div>
                                     
@@ -76,7 +85,7 @@ const Carrinho = ({carrinho, setCarrinho, data, setFiltroData}) => {
                                         </div>
                                         <div className="carrinho_cesta_inf_div">
                                             <p className='carrinho_cesta_inf_div_chave'>Valor:</p>
-                                            <p>{carrinho.length === 0 ? `R$ 0.00`: `R$ ${carrinho.map((obj) => obj.valor).reduce((inicio, valor) => inicio + valor)}.00`}</p>
+                                            <p>{carrinho.length === 0 ? `R$ 0.00`: `R$ ${carrinho.reduce((inicio,obj) => inicio + obj.valor ,0)}.00`}</p>
                                         </div>
                                         <button className="carrinho_cesta_inf_limpar" onClick={() => setCarrinho([])}>Limpar Produtos</button>
                                     </div>
@@ -86,6 +95,3 @@ const Carrinho = ({carrinho, setCarrinho, data, setFiltroData}) => {
                     </div>
                 </div>
             </>)}
-
-
-export default Carrinho

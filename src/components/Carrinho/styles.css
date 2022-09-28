@@ -1,0 +1,140 @@
+.carrinho{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 20px;
+    padding: 10px 0px;
+  }
+  
+  .carrinho_inpBut{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .carrinho_inpBtn_inp{
+  height: 50px;
+  width: 246px;
+  background-color:rgba(245, 245, 245, 1);
+  border: none;
+  margin-right: 5px;
+  }
+  
+  .carrinho_inpBtn_btn{
+    margin-left: 0px;
+    height: 49px;
+    width: 96px;
+    background-color: #37268c;
+    color:white ;
+    border: none;
+  }
+  
+  .carrinho_cesta{
+    display: flex;
+    flex-direction: column;
+    width: 347px;
+    
+  
+  }
+  
+  .carrinho_cesta_btn{
+  width: 100%;
+  height: 49px;
+  background-color:#37268c; 
+  color: white;
+  font-weight: 500;
+  border: none;
+  font-size: 18px;
+  
+  }
+  
+  .carrinho_cesta_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  
+    width: 100%;
+    height: 300px;
+    background-color: rgba(245, 245, 245, 1);
+    border: none;
+    padding: 20px 10px;
+  }
+  
+  .carrinho_cesta_vazia{
+  
+    margin: 80px auto;
+  }
+  
+  
+  
+  .carrinho_cesta_cheia{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+  }
+  
+  .carrinho_cesta_cheia_divImg{
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carrinho_cesta_cheia_img{
+    margin: 0;
+    padding: 0;
+    width: 80px;
+  }
+  
+  .carrinho_cesta_cheia_conteudo{
+  
+    margin-left: 7px;
+  }
+  
+  
+  .carrinho_cesta_cheia_conteudo_valor{
+    margin: 10px 0px;
+    color: #37268c;
+    font-weight: 500;
+  }
+  
+  .carrinho_cesta_cheia_conteudo_link{
+  font-style: italic;
+  font-weight: 500;
+  }
+  .carrinho_cesta_cheia_conteudo_link:hover{
+  cursor: pointer;
+  }
+  
+  .carrinho_cesta_inf{
+    background-color: #292929;
+    color: white;
+    padding: 10px;
+  }
+  
+  .carrinho_cesta_inf_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .carrinho_cesta_inf_div_chave{
+    font-weight: 500;
+    margin: 5px 0px
+  }
+  
+  .carrinho_cesta_inf_limpar{
+    font-weight: 400;
+    margin: 10px 0px;
+    font-style: italic;
+    color:#292929;
+    background-color: rgba(245, 245, 245, 1);;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+  }
+  
