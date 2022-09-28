@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {BtnFiltro} from '../BtnFilter'; 
+import {BtnFiltro} from '../1.1-BtnFilter'; 
 import "./styles.css"
 
 

@@ -1,10 +1,11 @@
 import data from './data';
-import { Header } from './components/Header';
-import { Cards } from './components/Cards';
-import { Carrinho } from './components/Carrinho';
+import { Header } from './components/1-Header';
+import { Cards } from './components/2-Cards';
+import { Carrinho } from './components/3-Carrinho';
 import { useCallback, useState } from 'react';
 
 function App() {
+  
   const [carrinho, setCarrinho] = useState([])
   const [filtroData, setFiltroData] = useState(data)
 

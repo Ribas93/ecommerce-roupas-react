@@ -1,0 +1,70 @@
+.div_card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 30px 30px;
+  gap: 20px;
+  width: 1000px;
+}
+
+.card{
+  box-shadow: 0px 0px 10px 1px rgb(237, 232, 232);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+.card:hover{
+  border: 0.8px solid #37268c;
+}
+
+.card_img_div{
+  height: 154px;
+  width: 296px;
+  background-color: rgba(245, 245, 245, 1);
+  display: flex;
+  justify-content: center;
+  }
+
+  
+  .card_btn{
+    padding: 4px; 
+    font-size: 12px; 
+    width: 67px; 
+    background-color: #2E245E; 
+    color: white; 
+    border: none; 
+    border-radius: 2px;
+    margin-left: 15px;
+    margin-top: 8px;
+  }
+
+  .card_nome{
+    font-size: 18px; 
+    font-weight: 700;
+  }
+  
+  .card_descricao{
+    width: 279px;
+    height: 70px;
+    font-weight: 400;
+    line-height: 1.6;
+    
+  }
+  .card_valor{
+    font-weight: 600; 
+    color:#2E245E}
+  
+  .card_adicionar{
+    font-weight: 600;
+    margin-bottom: 8px;
+    }
+  .card_adicionar:hover{
+    cursor: pointer;
+  }
+
+  .paddingLeft{
+    padding-left: 15px;
+  }
+  

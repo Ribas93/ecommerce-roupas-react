@@ -7,7 +7,7 @@ export const BtnFiltro = ({value, children, filterProductsList}) => {
     
     return(
         <>
-            <p onClick={() => filterProductsList(value)}>
+            <p className='link' onClick={() => filterProductsList(value)}>
              {children}
             </p>
         </>

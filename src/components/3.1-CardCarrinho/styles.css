@@ -1,0 +1,45 @@
+  
+  .cardCarrinho{
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   margin: 10px 15px;
+  }
+
+  
+  .cardCarrinho_img{
+    margin: 0;
+    padding: 0;
+    width: 90px;
+    background-color: white;
+  }
+  
+  .cardCarrinho_descricao{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .cardCarrinho_titulo{
+    margin-top: -2.5px;
+    color: rgba(51, 51, 51, 1);
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .cardCarrinho_valor{
+    color: #2E245E;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .cardCarrinho_removerProd{
+    color: #242424;
+    font-weight: 400;
+    font-style: oblique;
+  }
+
+  .cardCarrinho_removerProd:hover{
+    cursor: pointer;
+  }
